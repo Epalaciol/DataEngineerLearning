@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  18C:
+    image: gvenzl/oracle-xe
+    restart: always
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: admin
+    volumes:
+      - oracle-volume:/opt/oracle/oradata
+    networks:
+      - oracle-sql
+
+networks:
+  oracle-sql:
+
+volumes:
+  oracle-volume:
