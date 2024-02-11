@@ -7,4 +7,5 @@ services:
     - ./notebooks:/opt/notebooks
     ports:
     - 8888:8888
-    command: bash -c "conda install jupyterlab -y --quiet &&  mkdir -p /opt/notebooks && jupyter lab --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
+    command: bash -c "conda install jupyter -y --quiet &&  mkdir -p /opt/notebooks && jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root  --NotebookApp.token='' --NotebookApp.password=''"
+    # command: bash -c "conda install jupyterlab -y --quiet &&  mkdir -p /opt/notebooks && jupyter lab --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
